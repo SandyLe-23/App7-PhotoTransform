@@ -102,9 +102,23 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
-          
-          
-          
+        var canvas2 = document.getElementById('myCanvas2'); //links to second canvas
+        var context2 = canvas2.getContext("2d"); //accesses canvas items
+         
+        var imageData = context.getImageData(0, 0, 600, 500); //same size as first canvas
+        var canvasData = imageData.data; //stores data of the canvas pixels
+         
+        for(var i = 0; i < canvasData.length; i += 4) {
+            var red = dataArray[i];
+            var green = dataArray[i + 1];
+            var blue = dataArray[i + 2];
+            
+            dataArray[i] = 0;
+            dataArray[i + 1] = 0;
+         }
+         
+         context2.putImageData(imageData, 0, 0);
+         
         } // end of img.onload
         
         img.src = reader.result;
