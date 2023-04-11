@@ -109,10 +109,6 @@
         var canvasData = imageData.data; //stores data of the canvas pixels
          
         for(var i = 0; i < canvasData.length; i += 4) {
-            var red = canvasData[i];
-            var green = canvasData[i + 1];
-            var blue = canvasData[i + 2];
-            
             canvasData[i] = 0;
             canvasData[i + 1] = 0;
          }
